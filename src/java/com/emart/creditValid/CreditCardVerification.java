@@ -26,6 +26,8 @@ public class CreditCardVerification {
     public String verifyCard(@WebParam(name = "cardNum") String cardNum) {
         //TODO write your implementation code here:
  //int cNum=Integer.parseInt(cardNum);
+    
+    if(cardNum.length()==16){
     int[] cnum=new int[cardNum.length()];
     for(int i=0;i< cardNum.length();i++){
     cnum[i]=(cardNum.charAt(i)-'0');}
@@ -36,7 +38,10 @@ public class CreditCardVerification {
    if(status==true)
        return "True";
    else
-       return "False";
+       return "False";}
+    else{
+    return "False";
+    }
        }
  public boolean ismod10(int[] cnum){
  int sum=0,temp=0;
